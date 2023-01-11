@@ -8,3 +8,6 @@
 2. [Heroku Account](https://heroku.org)
 3. [VS Code](https://code.visualstudio.com/)
 4. [Git CLI](https://cli.github.com/)
+
+### Create a New Environment
+``` conda create -p reg_evs python==3.7 -y ```
