@@ -19,7 +19,7 @@ def home():
 @app.route('/predict_api', methods=['POST'])
 def predict_api():
     
-    ## Get data from WebApp
+    ## Get data from Json
     data = request.json['data']
     print(data)
     
@@ -33,6 +33,24 @@ def predict_api():
     ## Get output in jasonify
     return jsonify(output[0])
 
+@app.route('/predict', methods=['POST'])
+def predict():
+    
+    ## Get Data From WebApp
+    data = [float(x) for x in request.form.values()]
+    
+    ## Standadizing the WebApp Data
+    std_data = scalar.transform(np.array(list(data)).reshape(1, -1))
+    print(std_data)
+    
+    ## Now Pass the Std data to Model to Make Predictions
+    output = reg_model.predict(std_data)[0]
+    
+    return render_template("home.html", prediction_text=f"The Predicted Price of House is: {output}")
+    
+    
+    
+    
 
 ### Let's Run the App
 if __name__ == "__main__":

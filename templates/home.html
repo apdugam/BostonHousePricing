@@ -1,3 +1,76 @@
-<h1>
-    Hello Python
-</h1>
+<html>
+    <body>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+        <form action="{{url_for('predict')}}" method="post" class="container">
+            <h2 class="text-center mb-4">Boston Housing Kaggle Project</h2>
+            <div class="form-group">
+                <label for="CRIM">Per capita crime rate by town (CRIM):</label>
+                <input type="number" id="CRIM" name="CRIM" step="0.01" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="ZN">Proportion of residential land zoned for lots over 25,000 sq.ft. (ZN):</label>
+                <input type="number" id="ZN" name="ZN" step="0.01" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="INDUS">Proportion of non-retail business acres per town (INDUS):</label>
+                <input type="number" id="INDUS" name="INDUS" step="0.01" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="CHAS">Charles River dummy variable (CHAS):</label>
+                <select id="CHAS" name="CHAS" class="form-control" required>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="NOX">Nitric oxides concentration (parts per 10 million) (NOX):</label>
+                <input type="number" id="NOX" name="NOX" step="0.01" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="RM">Average number of rooms per dwelling (RM):</label>
+                <input type="number" id="RM" name="RM" step="0.01" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="AGE">Proportion of owner-occupied units built prior to 1940 (AGE):</label>
+                <input type="number" id="AGE" name="AGE" step="0.01" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="DIS">Weighted distances to five Boston employment centres (DIS):</label>
+                <input type="number" id="DIS" name="DIS" step="0.01" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="RAD">Index of accessibility to radial highways (RAD):</label>
+                <input type="number" id="RAD" name="RAD" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="TAX">Full-value property-tax rate per $10,000 (TAX):</label>
+                <input type="number" id="TAX" name="TAX" step="0.01" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="PTRATIO">Pupil-teacher ratio by town (PTRATIO):</label>
+                <input type="number" id="PTRATIO" name="PTRATIO" step="0.01" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="B">1000(Bk - 0.63)^2 where Bk is the proportion of blacks by town (B):</label>
+                <input type="number" id="B" name="B" step="0.01" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="LSTAT">% lower status of the population (LSTAT):</label>
+                <input type="number" id="LSTAT" name="LSTAT" step="0.01" class="form-control" required>
+            </div>
+            <div class="form-group text-center">
+                <input type="submit" value="Predict" class="btn btn-primary">
+            </div>
+            <br/>
+            {{prediction_text}}
+            </form>
+            <br/>
+            <br/>
+            
+            
+
+</body>
+</html>
+    
